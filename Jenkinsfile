@@ -12,12 +12,22 @@ pipeline {
 			}
 		
 		}
-
 		stage('Integration Test'){
 			steps {
 				echo "Integration Tests"
 			}
 		
+		}
+	} 
+	post {
+		always {
+			echo 'finished'
+		}
+		success {
+			echo 'success'
+		}
+		failure {
+			echo 'failure'
 		}
 	}
 }
